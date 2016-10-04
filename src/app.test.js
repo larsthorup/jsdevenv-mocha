@@ -3,12 +3,29 @@ var app = window.app;
 describe('app', function () {
   describe('render', function () {
     beforeEach(function () {
-      this.context = document.createDocumentFragment();
+      var fragment = document.createDocumentFragment();
+      fragment.appendChild(document.createElement('div'));
+      this.context = fragment.querySelector('div');
     });
 
-    it('should greet the world', function () {
+    beforeEach(function () {
       app.render(this.context);
-      this.context.innerHTML.should.equal('<span>Hey! 4 + 7 = 11</span>');
+    });
+
+    it('should render the dialog', function () {
+      this.context.querySelector('#result').textContent.should.equal('');
+    });
+
+    describe('click', function () {
+      beforeEach(function () {
+        this.context.querySelector('#a').value = '7';
+        this.context.querySelector('#b').value = '9';
+        this.context.querySelector('#calc').click();
+      });
+
+      it('should show the result', function () {
+        this.context.querySelector('#result').textContent.should.equal('16');
+      });
     });
   });
 });
