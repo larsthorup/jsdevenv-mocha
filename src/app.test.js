@@ -1,3 +1,5 @@
+var app = window.app;
+
 describe('app', function () {
   describe('render', function () {
     beforeEach(function () {
@@ -5,8 +7,8 @@ describe('app', function () {
     });
 
     it('should greet the world', function () {
-      window.app.render(this.context);
-      this.context.innerHTML.should.equal('<span>Hello World :)</span>');
+      app.render(this.context);
+      this.context.innerHTML.should.equal('<span>Hey! 4 + 7 = 11</span>');
     });
   });
 });
