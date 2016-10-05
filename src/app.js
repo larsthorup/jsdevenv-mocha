@@ -8,7 +8,7 @@ function render(context) {
   '  <button id="calc">Calculate</button>' +
   '  <p id="result"></p>'
   '</div>';
-  context.querySelector('#calc').addEventListener('click', function calculate () {
+  context.querySelector('button').addEventListener('click', function calculate () {
     var a = parseInt(context.querySelector('#a').value);
     var b = parseInt(context.querySelector('#b').value);
     var result = calc.add(a, b);

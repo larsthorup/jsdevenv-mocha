@@ -20,7 +20,7 @@ describe('app', function () {
       beforeEach(function () {
         this.context.querySelector('#a').value = '7';
         this.context.querySelector('#b').value = '9';
-        this.context.querySelector('#calc').click();
+        this.context.querySelector('button').click();
       });
 
       it('should show the result', function () {
